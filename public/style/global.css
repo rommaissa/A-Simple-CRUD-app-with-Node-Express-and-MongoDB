@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.4rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+p {
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+  color: #636363;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto 1fr;
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas: 'header header header' 'add update delete' 'display display display';
+  grid-gap: 1rem;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.container .button, .container .add-quote #submit, .container .update-quote #update-button, .container .delete-quote #delete-button {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.4rem;
+  border: 2px solid #222;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.container .button:hover, .container .add-quote #submit:hover, .container .update-quote #update-button:hover, .container .delete-quote #delete-button:hover, .container .button:focus, .container .add-quote #submit:focus, .container .update-quote #update-button:focus, .container .delete-quote #delete-button:focus {
+  outline: none;
+  -webkit-box-shadow: 2px 2px 0 1px #222;
+          box-shadow: 2px 2px 0 1px #222;
+  -webkit-transition: -webkit-box-shadow 200ms ease;
+  transition: -webkit-box-shadow 200ms ease;
+  transition: box-shadow 200ms ease;
+  transition: box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+}
+
+.container .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+.container .add-quote {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: add;
+  padding: 1rem;
+  border: 10px solid #a2d7ff;
+  border-radius: 10px;
+}
+
+.container .add-quote .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .add-quote .form input[type='text'] {
+  padding: 0.2rem;
+  margin-right: 0.1rem;
+  border: 2px solid #222;
+  border-radius: 6px;
+}
+
+.container .add-quote .form input[type='text']:focus {
+  outline: none;
+}
+
+.container .update-quote {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: update;
+  padding: 1rem;
+  border: 10px solid #fcf3b0;
+  border-radius: 10px;
+}
+
+.container .delete-quote {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: delete;
+  padding: 1rem;
+  border: 10px solid #ffdadf;
+  border-radius: 10px;
+}
+
+.container .delete-quote #delete-button {
+  margin-bottom: 0.4rem;
+}
+
+.container .delete-quote #message {
+  color: #dc352c;
+  font-weight: 600;
+}
+
+.container .display-quote {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: display;
+  padding: 1rem;
+  border: 10px solid #bfefd3;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.container .display-quote ul {
+  padding: 0;
+  margin: 0;
+}
+
+.container .display-quote ul li {
+  margin: 1rem 0 0 2rem;
+}
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+$border-color: #222;
+$white-color: #fff;
+$blue-color: #a2d7ff;
+$yellow-color: #fcf3b0;
+$orange-color: #ffdadf;
+$green-color: #bfefd3;
+$text-color: #636363;
+$error-color: #dc352c;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.4rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+p {
+  margin-bottom: 1.4rem;
+  font-size: 1.2rem;
+  color: $text-color;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    'header header header'
+    'add update delete'
+    'display display display';
+
+  grid-gap: 1rem;
+  padding: 2rem;
+  height: 100vh;
+
+  .button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.4rem;
+    border: 2px solid $border-color;
+    border-radius: 6px;
+    background: $white-color;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: 2px 2px 0 1px $border-color;
+      transition: box-shadow 200ms ease;
+    }
+  }
+
+  .title {
+    grid-area: header;
+  }
+
+  .add-quote {
+    grid-area: add;
+    padding: 1rem;
+    border: 10px solid $blue-color;
+    border-radius: 10px;
+
+    .form {
+      display: flex;
+
+      input[type='text'] {
+        padding: 0.2rem;
+        margin-right: 0.1rem;
+        border: 2px solid $border-color;
+        border-radius: 6px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    #submit {
+      @extend .button;
+    }
+  }
+
+  .update-quote {
+    grid-area: update;
+    padding: 1rem;
+    border: 10px solid $yellow-color;
+    border-radius: 10px;
+
+    #update-button {
+      @extend .button;
+    }
+  }
+
+  .delete-quote {
+    grid-area: delete;
+    padding: 1rem;
+    border: 10px solid $orange-color;
+    border-radius: 10px;
+
+    #delete-button {
+      @extend .button;
+      margin-bottom: 0.4rem;
+    }
+
+    #message {
+      color: $error-color;
+      font-weight: 600;
+    }
+  }
+
+  .display-quote {
+    grid-area: display;
+    padding: 1rem;
+    border: 10px solid $green-color;
+    border-radius: 10px;
+    overflow-y: scroll;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 1rem 0 0 2rem;
+      }
+    }
+  }
+}
